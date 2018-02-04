@@ -3,6 +3,8 @@ import java.util.Random;
 
 public class Lab02
 {
+  //how to compile: java -Xss2000M Lab02
+  
   //global variables and arrays
   public static int arrayALength = 50000000;
   public static int[] A = new int[arrayALength];
