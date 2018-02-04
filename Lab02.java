@@ -3,23 +3,8 @@ import java.util.Random;
 
 public class Lab02
 {
-  //global variable
-  //public static int arrayALength = 10;
-  //public static int[] A = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-/*  public static int arrayALength1 = 100; //50000000;\
-  public static int arrayALength2 = 500;
-  public static int arrayALength2 = 1000;
-  public static int arrayALength2 = 5000;
-  public static int arrayALength2 = 10000;
-  public static int arrayALength2 = 50000;
-  public static int arrayALength2 = 100000;
-  public static int arrayALength2 = 500000;
-  public static int arrayALength2 = 1000000;
-  public static int arrayALength2 = 5000000;
-  public static int arrayALength2 = 10000000;
-  */
+  //global variables and arrays
   public static int arrayALength = 50000000;
-
   public static int[] A = new int[arrayALength];
   public static String[] algorithmNames = {"linearSearch", "betterLinearSearch", "sentinelLinearSearch", "recursiveLinearSearch"};
 
