@@ -1,0 +1,6 @@
+Searching array of size: 50000000
+Algorithm: recursiveLinearSearch
+Looking for element: -10
+Result: -1
+Duration: 730.514445
+
