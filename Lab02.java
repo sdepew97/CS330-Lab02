@@ -6,7 +6,7 @@ public class Lab02 {
     //how to compile: java -Xss2000M Lab02
 
     //global variables and arrays
-    public static int arrayALength = 50000000;
+    public static int arrayALength = 10000000; //10000000 to  50000000 with 10000000 increment
     public static int[] A = new int[arrayALength];
     public static String[] algorithmNames = {"linearSearch", "betterLinearSearch", "sentinelLinearSearch", "recursiveLinearSearch"};
 
@@ -19,7 +19,7 @@ public class Lab02 {
         initalizeA(A, arrayALength);
         fisherYatesShuffle(A, arrayALength);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
 
             //best case
             int bestCase = A[0];
@@ -28,65 +28,65 @@ public class Lab02 {
             int linearSearchBest = linearSearch(A, arrayALength, bestCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[0], bestCase, linearSearchBest, duration);
-
+	    
             bestStart = System.nanoTime();
             int betterLinearSearchBest = betterLinearSearch(A, arrayALength, bestCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[1], bestCase, betterLinearSearchBest, duration);
-
+	    	   
             bestStart = System.nanoTime();
             int sentinelLinearSearchBest = sentinelLinearSearch(A, arrayALength, bestCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[2], bestCase, sentinelLinearSearchBest, duration);
-
+	    
             bestStart = System.nanoTime();
             int recursiveLinearSearchBest = recursiveLinearSearch(A, arrayALength, 0, bestCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
-            printInformation(arrayALength, algorithmNames[3], bestCase, recursiveLinearSearchBest, duration);
-
+            printInformation(i, arrayALength, algorithmNames[3], bestCase, recursiveLinearSearchBest, duration);
+	  	    
             //average case
             //get random integer
             Random random = new Random();
-            int averageCase = random.nextInt(arrayALength * 4);
+            int averageCase = random.nextInt(arrayALength * 2);
 
-            bestStart = System.nanoTime();
+	    bestStart = System.nanoTime();
             int linearSearchAverage = linearSearch(A, arrayALength, averageCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[0], averageCase, linearSearchAverage, duration);
-
+	   	    
             bestStart = System.nanoTime();
             int betterLinearSearchAverage = betterLinearSearch(A, arrayALength, averageCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
-           printInformation(i, arrayALength, algorithmNames[1], averageCase, betterLinearSearchAverage, duration);
-
+	    printInformation(i, arrayALength, algorithmNames[1], averageCase, betterLinearSearchAverage, duration);
+	   	    
             bestStart = System.nanoTime();
             int sentinelLinearSearchAverage = sentinelLinearSearch(A, arrayALength, averageCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[2], averageCase, sentinelLinearSearchAverage, duration);
-
+	  	    
             bestStart = System.nanoTime();
             int recursiveLinearSearchAverage = recursiveLinearSearch(A, arrayALength, 0, averageCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[3], averageCase, recursiveLinearSearchAverage, duration);
-
+	  	    
             //worst case
             int worstCase = -10;
 
-            bestStart = System.nanoTime();
+	    bestStart = System.nanoTime();
             int linearSearchWorst = linearSearch(A, arrayALength, worstCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[0], worstCase, linearSearchWorst, duration);
-
-            bestStart = System.nanoTime();
+	   
+	    bestStart = System.nanoTime();
             int betterLinearSearchWorst = betterLinearSearch(A, arrayALength, worstCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[1], worstCase, betterLinearSearchWorst, duration);
-
+	   	
             bestStart = System.nanoTime();
             int sentinelLinearSearchWorst = sentinelLinearSearch(A, arrayALength, worstCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
             printInformation(i, arrayALength, algorithmNames[2], worstCase, sentinelLinearSearchWorst, duration);
-
+	   	    
             bestStart = System.nanoTime();
             int recursiveLinearSearchWorst = recursiveLinearSearch(A, arrayALength, 0, worstCase);
             duration = (System.nanoTime() - bestStart) / 1000000.0; //duration is in miliseconds
@@ -158,26 +158,11 @@ public class Lab02 {
     }
 
     public static void printInformation(int iteration, int n, String algorithm, int x, int result, double duration) {
-
-        /*PrintStream originalOut = System.out;
-        PrintStream out = new PrintStream("Results.txt");
-        System.setOut(out);
-        */
-
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Results.txt", true));
-
-            bufferedWriter.write("Iteration Number: " + (iteration+1) + " ");
-            bufferedWriter.write("Searching array of size: " + n + " ");
-            bufferedWriter.write("Algorithm: " + algorithm + " ");
-            bufferedWriter.write("Looking for element: " + x + " ");
-            bufferedWriter.write("Result: " + result + " ");
-            bufferedWriter.write("Duration: " + duration + " ");
-            bufferedWriter.write("\n");
-            bufferedWriter.close();
-        }
-        catch (IOException exception) {
-            exception.printStackTrace();
-        }
+	 System.out.println("Iteration Number: " + (iteration+1) + " ");
+         System.out.println("Searching array of size: " + n + " ");
+         System.out.println("Algorithm: " + algorithm + " ");
+         System.out.println("Looking for element: " + x + " ");
+         System.out.println("Result: " + result + " ");
+         System.out.println("Duration: " + duration + " ");
     }
 } //Lab02

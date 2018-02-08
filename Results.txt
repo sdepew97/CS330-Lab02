@@ -151,3 +151,5 @@ Iteration Number: 10 Searching array of size: 50000000 Algorithm: betterLinearSe
 Iteration Number: 10 Searching array of size: 50000000 Algorithm: sentinelLinearSearch Looking for element: -10 Result: -1 Duration: 29.436456 
 Iteration Number: 10 Searching array of size: 50000000 Algorithm: recursiveLinearSearch Looking for element: -10 Result: -1 Duration: 672.582513 
 >>>>>>> 890d8e3d2fcad4327c6d3563c2d8396341893546
+Iteration Number: 1 Searching array of size: 10000000 Algorithm: linearSearch Looking for element: 6766715 Result: 0 Duration: 6.070979 
+Iteration Number: 1 Searching array of size: 10000000 Algorithm: linearSearch Looking for element: 4348430 Result: 0 Duration: 6.189651 
